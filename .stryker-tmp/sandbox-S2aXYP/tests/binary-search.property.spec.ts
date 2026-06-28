@@ -1,18 +1,7 @@
+// @ts-nocheck
 import { binarySearch, generateSortedArray } from "./helpers";
-import { recordMetrics } from "../metrics/testmetrics";
-
 
 describe("binarySearch property-based", () => {
-   let testStartTime: number;
-
-  beforeEach(() => {
-    testStartTime = performance.now();
-  });
-
-  afterEach(() => {
-    const duration = performance.now() - testStartTime;
-    recordMetrics("binarySearch property-based", duration, 3, 0.01);
-  });
   it("cumple la propiedad f(A,k) = i → (A[i] = k) ∨ (i = -1 ∧ k ∉ A)", () => {
     for (let i = 0; i < 100; i++) {
       const arr = generateSortedArray();

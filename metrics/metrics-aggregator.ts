@@ -28,7 +28,6 @@ const MODULE_LOC: Record<string, number> = {
   "binarySearch básica": 13,
   "binarySearch contract testing": 13,
   "binarySearch property-based": 13,
-  "Binary Search": 13,
   "Jasmine Setup": 34,
   "Test Metrics": 37,
   "Advanced Spies": 47,
@@ -44,7 +43,6 @@ const MODULE_CC: Record<string, number> = {
   "binarySearch básica": 3,
   "binarySearch contract testing": 3,
   "binarySearch property-based": 3,
-  "Binary Search": 3,
   "Jasmine Setup": 2,
   "Test Metrics": 2,
   "Advanced Spies": 2,
@@ -57,12 +55,25 @@ const MODULE_CC: Record<string, number> = {
  * @example "binarySearch básica encuentra un elemento" → "binarySearch básica"
  */
 function extractModuleName(testName: string): string {
-  // Buscar el primer nivel del describe (nombre del módulo)
-  const match = testName.match(/^([^]+?)\s+(?:encuentra|devuelve|maneja|busca|cumple|precondición|postcondición)/);
-  if (match) {
-    return match[1].trim();
+  // Si el nombre ya es limpio (solo módulo), retornarlo directamente
+  const moduleNames = [
+    "binarySearch básica",
+    "binarySearch contract testing",
+    "binarySearch property-based",
+    "Jasmine Setup",
+    "Test Metrics",
+    "Advanced Spies",
+    "Type Generator",
+    "Combinatorial",
+  ];
+
+  for (const moduleName of moduleNames) {
+    if (testName.includes(moduleName)) {
+      return moduleName;
+    }
   }
-  return testName.split(" ")[0];
+
+  return "Otros";
 }
 
 /**

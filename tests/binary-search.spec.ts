@@ -1,6 +1,19 @@
 import { binarySearch } from "./helpers";
+import { recordMetrics } from "../metrics/testmetrics";
 
 describe("binarySearch básica", () => {
+  let testStartTime: number;
+
+  beforeEach(() => {
+    testStartTime = performance.now();
+  });
+
+  afterEach(() => {
+    const duration = performance.now() - testStartTime;
+    // Módulo fijo para este archivo
+    recordMetrics("binarySearch básica", duration, 3, 0.01);
+  });
+
   it("encuentra un elemento existente", () => {
     const arr = [1, 2, 3, 4, 5];
     expect(binarySearch(arr, 3)).toBe(2);

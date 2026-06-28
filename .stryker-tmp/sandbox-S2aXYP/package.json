@@ -1,0 +1,25 @@
+{
+  "name": "mi-proyecto-testing",
+  "version": "1.0.0",
+  "description": "Proyecto de pruebas avanzadas con TypeScript, Jasmine y Stryker",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "test": "npm run build && jasmine --config=spec/support/jasmine.json",
+    "mutate": "stryker run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@stryker-mutator/core": "^9.6.1",
+    "@types/jasmine": "^6.0.0",
+    "@types/node": "^26.0.1",
+    "jasmine": "^6.3.0",
+    "stryker": "^1.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  }
+}
