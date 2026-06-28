@@ -1,3 +1,4 @@
+# Autores: Josué Alexis Piedra Sánchez y Andrés Sebastián Piedra Sánchez
 # 🧪 Proyecto de Testing Avanzado
 
 Proyecto integral de pruebas con **TypeScript**, **Jasmine**, **Stryker** y patrones avanzados de testing.
