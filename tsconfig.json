@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    // Compilar a ES2020 para compatibilidad moderna
+    "target": "ES2020",
+    // Usar CommonJS para que funcione con Node.js y Jasmine sin módulos nativos
+    "module": "CommonJS",
+    // Resolución de módulos moderna y recomendada
+    "moduleResolution": "bundler",
+    // Salida compilada en carpeta dist/
+    "outDir": "dist",
+    // Generar archivos de declaración .d.ts
+    "declaration": true,
+    // Mapas de fuente para debugging
+    "sourceMap": true,
+    // Activar esModuleInterop para import/export en CommonJS
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    // Modo estricto para mejor tipado
+    "strict": true,
+    "skipLibCheck": true,
+    "types": ["node", "jasmine"]
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}
